@@ -11,7 +11,7 @@ Este directorio contiene el esquema de la base de datos MySQL para el proyecto I
 
 ## 🗃️ Estructura de la Base de Datos
 
-La base de datos contiene las siguientes tablas principales:
+La base de datos contiene **12 tablas** organizadas en los siguientes grupos:
 
 ### Tablas de Usuario y Autenticación
 - `usuario` - Información de usuarios del sistema
