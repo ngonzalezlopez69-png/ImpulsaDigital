@@ -1,0 +1,50 @@
+# Archivos de configuración con credenciales sensibles
+admin/bd.php
+asesor/bd.php
+
+# Archivos temporales de PHP
+*.tmp
+*.temp
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Directorios de cache
+cache/
+tmp/
+temp/
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de editor
+.vscode/
+*.swp
+*.swo
+*~
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Archivos de composer (si se usan)
+vendor/
+composer.lock
+
+# Archivos de Node.js (si se usan)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos de imágenes grandes o uploads temporales
+uploads/temp/
+*.psd
+*.ai
+
+# Archivos específicos del servidor
+.htaccess.local
+config.local.php
