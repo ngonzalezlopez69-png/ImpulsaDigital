@@ -26,11 +26,18 @@ ImpulsaDigital es una plataforma web desarrollada para ofrecer soluciones tecnol
 ```
 myweb3.0/
 ├── index.php                 # Página principal
+├── database/                 # Base de datos
+│   ├── bdmyweb3.0.sql       # Schema y datos de la BD
+│   └── README.md            # Documentación de BD
 ├── admin/                    # Panel administrativo
 │   ├── bd.php               # Configuración de base de datos
+│   ├── bd.example.php       # Ejemplo de configuración
 │   ├── login.php            # Login de administrador
 │   └── secciones/           # Módulos administrativos
 ├── asesor/                  # Panel de asesor
+│   ├── bd.php               # Configuración de base de datos
+│   ├── bd.example.php       # Ejemplo de configuración
+│   └── secciones/           # Módulos de asesor
 ├── assets/                  # Recursos estáticos
 │   ├── img/                 # Imágenes del proyecto
 │   ├── favicon.ico          # Favicon
@@ -53,14 +60,14 @@ myweb3.0/
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/tu-usuario/myweb3.0.git
-   cd myweb3.0
+   git clone https://github.com/ngonzalezlopez69-png/ImpulsaDigital.git
+   cd ImpulsaDigital
    ```
 
 2. **Configurar la base de datos**
    - Crear una base de datos MySQL
-   - Importar el schema SQL (si está disponible)
-   - Configurar las credenciales en `admin/bd.php`
+   - Importar el archivo SQL: `database/bdmyweb3.0.sql`
+   - Configurar las credenciales en `admin/bd.php` y `asesor/bd.php`
 
 3. **Configurar el servidor web**
    - Apuntar el document root a la carpeta del proyecto
@@ -75,13 +82,31 @@ myweb3.0/
 ## 🔧 Configuración
 
 ### Base de Datos
-El archivo `admin/bd.php` contiene la configuración de la base de datos. Asegúrate de actualizar las credenciales:
+Los archivos de configuración de la base de datos están en `.gitignore` por seguridad. Usa los archivos ejemplo:
 
+**Para admin/bd.php:**
 ```php
 $server = "localhost";
 $dbname = "tu_base_de_datos";
 $user = "tu_usuario";
 $password = "tu_contraseña";
+```
+
+**Para asesor/bd.php:**
+```php
+// Misma configuración que admin/bd.php
+$server = "localhost";
+$dbname = "tu_base_de_datos";  // Misma BD
+$user = "tu_usuario";
+$password = "tu_contraseña";
+```
+
+**Importar la base de datos:**
+```bash
+# Usando MySQL command line
+mysql -u tu_usuario -p tu_base_de_datos < database/bdmyweb3.0.sql
+
+# O usando phpMyAdmin: Importar el archivo database/bdmyweb3.0.sql
 ```
 
 ## 📱 Funcionalidades
@@ -108,6 +133,13 @@ $password = "tu_contraseña";
 - Reportes básicos
 
 ## 🎨 Personalización
+
+### Base de Datos
+Ver la documentación completa en `database/README.md` para:
+- Estructura detallada de tablas
+- Usuarios de prueba incluidos
+- Instrucciones de instalación paso a paso
+- Configuración de conexiones
 
 ### Colores y Estilos
 Los estilos principales se encuentran en `css/styles.css`. El proyecto utiliza Bootstrap como framework CSS base.
